@@ -1,0 +1,167 @@
+/*
+GUI Assignment: Homework 3
+Date: 11/07/2023
+Name: Alexander Vasquez Romero Jr
+Email: alexander_vasquez1@student.uml.edu
+Description: My style sheet for the main 'index.html' file
+*/
+
+body {
+    font-family: 'Roboto', sans-serif; /*Font*/
+    background-color: #282a36; /*Page color*/
+    color: white; /*Text color*/
+    display: flex;
+    padding: 20px;
+/*Cited:
+Changing font -> https://www.w3schools.com/css/css_font.asp
+flex -> https://www.w3schools.com/cssref/pr_class_display.php
+*/    
+}
+
+
+
+/*Styling of input form by adding a border around it*/
+#tableForm {
+    border: 2px dotted #bd93f9; /*dotted border style*/
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+/*Cited:
+Getting dotted style -> https://www.w3schools.com/css/css_border.asp
+*/
+}
+
+/* Container for the table */
+#tableContainer {
+    overflow: auto; /* Allows scrolling if the content exceeds the container size */
+    height: 400px; /* Fixed height of the container */
+    position: relative; 
+    flex-grow: 1; /* Allows the container to grow and fill available space in flex layout */
+    margin-left: 20px; /* Adds space to the left of the container */
+/*Cited:
+Making container grow depending on content --> https://www.w3schools.com/cssref/css3_pr_flex-grow.php
+Overflow --> https://www.w3schools.com/css/css_overflow.asp
+*/
+}
+
+/* Formatting for the table */
+table {
+    border-collapse: collapse; /* Collapses border to avoid double borders between cells */
+    width: 100%; /* Table width is set to fill the entire width of its container */
+    background-color: #242433;
+    color: white; /*Text color*/
+}
+
+
+/*Styling for the individual inner cells*/
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Make all header cells sticky */
+th, th:first-child {
+    position: sticky;
+    top: 0; /* Enures the x axis cells stick for better readibility*/
+    left:0; /* Ensures the y axis cells stick for better readibility*/
+    background-color: #3f4772; /* Background color to ensure text readability */
+/*Cited:
+x and y axis stickiness --> https://www.w3schools.com/howto/howto_css_sticky_element.asp
+*/
+}
+
+/* Styling for the individual input boxes*/
+input[type=number], input[type=submit] {
+    padding: 5px;
+    margin: 5px 0; /* Space between input boxes */
+    border-radius: 15px; /* rounding the corners of the input form and button*/
+}
+
+/* Styling for the 'generate table button' */
+input[type=submit] {
+    background-color: #f074b7; /*Button color*/
+    color: white; /*Text color*/
+    cursor: pointer; /*Mouse pointer changes when hovered on button to let the user know you can click on it*/
+}
+
+/* Error message text color */
+#errorMessage {
+    color: red;
+}
+
+/* Added alternate styling for the cells for readibility */
+tr:nth-child(even) td:nth-child(even){
+    background-color: #876ba8; /*Color for even cell*/
+}
+tr:nth-child(odd) td:nth-child(odd) {
+    
+    background-color: #4d3370; /*Color for odd cell*/
+/*Cited:
+https://www.w3schools.com/html/html_table_styling.asp
+*/
+}
+
+/*Table form formatting ( I want the input form size to remain the same even if the user resizes the page)*/
+#tableForm {
+    display: flex;
+    flex-direction: column; /* Stacking the elements*/
+    gap: 10px; /* Space between form elements */
+/*Cited:
+https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+*/
+}
+
+/*-----------------------ADDITIONAL STYLING FOR PART 4-----------------------------*/
+
+  /* Change background color of Creation Tab link */
+  ul.ui-tabs-nav li:first-child a { 
+    background: #f074b7; /*Button color*/
+    outline: none; 
+  }
+
+  /* Active tab link styling */
+  #tabs ul li a.ui-tabs-active {
+    background: #bd93f9;  
+    border-bottom: 1px solid #bd93f9;  
+    outline: none;     
+  }
+
+  /* Set background of main tab container */
+  .ui-tabs.ui-corner-all.ui-widget.ui-widget-content {
+    background-color: #242433; 
+  }
+   
+  /* Customize tab header menu background */
+  ul.ui-tabs-nav.ui-corner-all.ui-helper-reset.ui-helper-clearfix.ui-widget-header { /* used inspect element selector for this */
+    background: #242433; /* Changed color so it matches the rest of the page */
+  }
+
+  /* Remove borders and outline from tab header, originally they had this white outline over it which made it look messy so I removed it entirely */
+  ul.ui-tabs-nav {
+    border: none;
+    outline: none;  
+  }
+
+  /* Style close all tabs button */
+  #closeAllTabs {
+    background: rgb(226, 63, 63); /*Base color of close all tabs button */
+    color: white; /* Text color */
+    padding: 10px 15px;  /* Added padding because it was too close to the tabs originally */
+    border: none;                     
+    cursor: pointer;   /* Make the cursor change upon hovering over it*/        
+    margin-bottom: 10px; /* More space added for the tabs and button to not be close*/
+    border-radius: 20px; /* Round the corners */ 
+  } 
+  
+  /* Close button hover style */
+  #closeAllTabs:hover {    
+    background: rgb(252, 0, 0); /* Turns bright red when hovering over the close all butotn (like how web browsers do it)*/
+  }
+
+/*
+Cited:
+https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/select_an_element/index.html
+
+Anything else I just borrowed from what I previously did in lines 109 and earlier
+*/

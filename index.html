@@ -1,0 +1,59 @@
+<!--
+GUI Assignment: Homework 4
+Date: 11/07/2023
+Name: Alexander Vasquez Romero Jr
+Email: alexander_vasquez1@student.uml.edu
+Description: My index.html file, used for my main page of my website, now with jQuery stuff linked in
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🔢 Multiplication Table Generator - Alex Vasquez</title>
+    <link rel="stylesheet" href="css/style.css"> <!--linked external css-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!--linked jQuery validation and dependencies-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script> <!--linked jQuery validation and dependencies-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <form id="tableForm"> <!-- Created a form for user input-->
+        <label for="multiplierStart">Multiplier Start - Minimum Row (X) Value:</label>
+        <input type="number" id="multiplierStart" name="multiplierStart" required>
+        <div id="multiplierStartSlider"></div>
+
+        <label for="multiplierEnd">Multiplier End - Maximum Row (X) Value:</label>
+        <input type="number" id="multiplierEnd" name="multiplierEnd" required>
+        <div id="multiplierEndSlider"></div>
+
+        <label for="multiplicandStart">Multiplicand Start - Minimum Column (Y) Value:</label>
+        <input type="number" id="multiplicandStart" name="multiplicandStart" required>
+        <div id="multiplicandStartSlider"></div>
+
+        <label for="multiplicandEnd">Multiplicand End - Maximum Column (Y) Value:</label>
+        <input type="number" id="multiplicandEnd" name="multiplicandEnd" required>
+        <div id="multiplicandEndSlider"></div>
+      
+        <input type="submit" value="Generate Table"> <!--Changed type from 'button' to 'submit' so form submission denial can work-->
+    </form>
+
+    <div id="tabs">
+        <button id="closeAllTabs">Close All Tabs</button> <!--Button created to close all tabs-->
+        <ul>
+            <li><a href="#tabs-1">Creation Tab</a></li>
+        </ul>
+        <div id="tabs-1">
+            <div id="tableContainer"></div> <!--Div made to contain the generated table-->
+        </div>
+    </div>
+
+    <div id="errorMessage"></div>
+    <script src="script.js"></script> <!--linked external JS-->
+</body>
+</html>
+
+<!--
+Cited:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+https://www.w3schools.com/css/css_howto.asp
+https://www.w3schools.com/tags/att_script_src.asp
+-->
